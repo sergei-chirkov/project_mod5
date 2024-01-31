@@ -1,4 +1,4 @@
-package org.example;
+package ru.shirkov;
 
 /**
  * Hello world!
