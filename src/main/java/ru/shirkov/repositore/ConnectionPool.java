@@ -9,18 +9,27 @@ import java.sql.SQLException;
 @Component
 
 public class ConnectionPool {
-    private HikariConfig config = new HikariConfig();
+
     private HikariDataSource dataSource;
+//    public ConnectionPool(){
+//        HikariConfig config = new HikariConfig();
+//
+//        config.setJdbcUrl("jdbc:mysql://localhost:3306/todo");
+//        config.setUsername("root");
+//        config.setPassword("123456789");
+//
+//        dataSource = new HikariDataSource(config);
+//    }
 
     public ConnectionPool(
-            @Value("jdbc:mysql://localhost:3306")
+            @Value("${spring.datasource.url}")
             String dbUrl,
-            @Value("root")
+            @Value("${spring.datasource.user}")
             String dbUser,
-            @Value("123456789")
+            @Value("${spring.datasource.password}")
             String dbPassword
     ) {
-
+        HikariConfig config = new HikariConfig();
         config.setJdbcUrl(dbUrl);
         config.setUsername(dbUser);
         config.setPassword(dbPassword);

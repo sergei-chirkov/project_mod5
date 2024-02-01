@@ -8,15 +8,15 @@ import jakarta.persistence.Table;
 @Table(name = "task")
 public class Task {
     @Id
-    private Long id;
+    private Integer id;
     private String description;
     private Status status;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

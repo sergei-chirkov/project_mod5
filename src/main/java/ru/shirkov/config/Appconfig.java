@@ -6,6 +6,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan("ru.shirkov")
-@PropertySource("classpath:application.propirties")
+@PropertySource("classpath:application.properties")
 public class Appconfig {
 }
