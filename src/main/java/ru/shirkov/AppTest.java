@@ -15,7 +15,7 @@ public class AppTest
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Appconfig.class);
         TaskService bean = context.getBean(TaskService.class);
         Task task = bean.get(1);
-//        System.out.println("111" + task);
+        System.out.println("111" + task);
 
 
     }
