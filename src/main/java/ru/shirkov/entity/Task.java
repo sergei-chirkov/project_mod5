@@ -1,23 +1,29 @@
 package ru.shirkov.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "task")
+@Table(schema = "todo", name = "task")
 public class Task {
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String description;
+    @Enumerated(EnumType.ORDINAL)
     private Status status;
 
-    public Integer getId() {
-        return id;
+    public Task() {
+
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getDescription() {
@@ -35,6 +41,4 @@ public class Task {
     public void setStatus(Status status) {
         this.status = status;
     }
-
-
 }
