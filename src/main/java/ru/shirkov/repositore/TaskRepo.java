@@ -1,14 +1,6 @@
 package ru.shirkov.repositore;
 
 import org.springframework.stereotype.Repository;
-import ru.shirkov.config.ConnectionPool;
-import ru.shirkov.entity.Status;
-import ru.shirkov.entity.Task;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 @Repository
 

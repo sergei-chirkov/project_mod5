@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core">
+<head>
+    <meta charset="UTF-8">
+    <title>tasks</title>
+</head>
+<body>
+<h1>Hello </h1>
+
+<table id="table1">
+
+</table>
+<div>
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Discription</th>
+            <th>Status</th>
+        </tr>
+
+            <tbody>
+                <tr th:each="task,number : ${tasks}">
+                    <td th:text="${task.id}"></td>
+                    <td th:text="${task.description}" th:id="'description_' + ${task.id}"></td>
+                    <td th:text="${task.status}" th:id="'status_' + ${task.id}"></td>
+                </tr>
+            </tbody>
+
+    </table>
+</div>
+
+</body>
+</html>
