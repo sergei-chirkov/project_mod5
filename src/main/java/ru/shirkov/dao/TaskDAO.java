@@ -47,11 +47,11 @@ public class TaskDAO {
 
         @Transactional
         public void edit (Task task) throws SQLException {
-
+            getSession().persist(task);
         }
 
         @Transactional
         public void delete (Task task){
-
+            getSession().remove(task);
         }
     }

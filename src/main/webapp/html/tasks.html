@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="en" taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core">
+<html lang="en" taglib prefix="th" uri="http://java.sun.com/jsp/jstl/core">
 <head>
     <meta charset="UTF-8">
     <title>tasks</title>
+    <script src="/script/jquery.js"></script>
+    <script src="/script/script.js"></script>
 </head>
 <body>
 <h1>Hello </h1>
@@ -20,15 +22,48 @@
             <th>Status</th>
         </tr>
 
-            <tbody>
-                <tr th:each="task,number : ${tasks}">
-                    <td th:text="${task.id}"></td>
-                    <td th:text="${task.description}" th:id="'description_' + ${task.id}"></td>
-                    <td th:text="${task.status}" th:id="'status_' + ${task.id}"></td>
-                </tr>
-            </tbody>
+        <tbody>
+        <tr th:each="task,number : ${tasks}">
+
+            <td th:text="${task.id}"></td>
+            <td th:text="${task.description}" th:id="'description_' + ${task.id}"></td>
+            <td th:text="${task.status}" th:id="'status_' + ${task.id}"></td>
+            <td>
+                <button th:id="'edit_' + ${task.id}" th:onclick="'edit_task(' + ${task.id} + ')'"> Edit</button>
+            </td>
+            <td>
+                <button th:id="'delete_' + ${task.id}" th:onclick="'delete_task('+ ${task.id} +')'"> Delete </button>
+            </td>
+        </tr>
+        </tbody>
+        <div>
+            <td>ADD new task:</td>
+            <tr>
+                <td> - </td>
+                <td>
+                    <input id ='description_name' type='text' value=''>
+                </td>
+                <td>
+                    <label for='status_new'></label>
+                    <select id='status_new'>
+                        <option value='IN_PROGRESS'>IN_PROGRESS</option>
+                        <option value='DONE'>DONE</option>
+                        <option value='PAUSED'>PAUSED</option>
+                    </select>
+                </td>
+                <td>
+                    <button id ='save_new' onclick='add_task()'>Save</button>
+                </td>
+            </tr>
+        </div>
+
 
     </table>
+    <h2>
+        <button th:each="numberPage : ${pages}" >
+            <a th:href="@{/(page=${numberPage},limit=10)}" th:text="${numberPage}"> </a>
+        </button>
+    </h2>
 </div>
 
 </body>
