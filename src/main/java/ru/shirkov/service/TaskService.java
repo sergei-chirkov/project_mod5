@@ -3,7 +3,7 @@ package ru.shirkov.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.shirkov.dao.TaskDAO;
+import ru.shirkov.repository.TaskDAO;
 import ru.shirkov.entity.Status;
 import ru.shirkov.entity.Task;
 

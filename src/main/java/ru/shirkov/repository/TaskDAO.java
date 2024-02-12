@@ -1,4 +1,4 @@
-package ru.shirkov.dao;
+package ru.shirkov.repository;
 
 
 import org.hibernate.Session;
