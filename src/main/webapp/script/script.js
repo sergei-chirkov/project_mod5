@@ -33,7 +33,7 @@ function getDropdownStatus(task_id) {
 }
 
 function update_task(task_id){
-     let url= "/" + task_id;
+     let url= "/project/" + task_id;
      let value_description = $("#input_description" + task_id).val();
      let value_status = $("#select_status_" + task_id).val();
 
@@ -52,7 +52,7 @@ function update_task(task_id){
 }
 
 function delete_task(task_id) {
-    let url = "/"  + task_id;
+    let url = "/project/"  + task_id;
     $.ajax(
         {
             url: url,
@@ -68,7 +68,7 @@ function add_task(){
     let value_status = $("#status_new").val();
 
     $.ajax({
-        url: "/",
+        url: "/project/",
         type: "POST",
         dataType: 'json',
         contentType: 'application/json;charset=UTF-8',
