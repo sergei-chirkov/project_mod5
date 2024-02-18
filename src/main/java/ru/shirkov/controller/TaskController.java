@@ -19,7 +19,7 @@ public class TaskController {
     }
 
 
-    @GetMapping()
+    @GetMapping("/")
     public String tasks(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int page,
                         @RequestParam (value = "limit", required = false, defaultValue = "10") int limit){
 
